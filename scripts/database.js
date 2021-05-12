@@ -26,12 +26,53 @@ const database = {
             price: 8.50
         }
     ],
-    frostingFlavors: [],
-    toppings: [],
+    frostingFlavors: [
+        {
+            id: 1,
+            name: "Cream Cheese",
+            price: 1.00
+        },
+        {
+            id: 2,
+            name: "Vanilla",
+            price: 1.00
+        },
+        {
+            id: 3,
+            name: "Chocolate",
+            price: 1.00
+        }
+    ],
+    toppings: [
+        {
+            id: 1,
+            name: "Chocolate Sprinkles",
+            price: .50
+        },
+        {
+            id: 1,
+            name: "Chocolate Curls",
+            price: .50
+        },
+        {
+            id: 1,
+            name: "Rainbow Sprinkles",
+            price: .50
+        },
+        {
+            id: 1,
+            name: "Cinnamon Sugar",
+            price: .50
+        }
+    ],
     cupcakes: [],
     cupcakeBuilder: {}
 }
 
 export const getCakes = () => {
     return [...database.cakeTypes]
+}
+
+export const getFrostingFlavors = () => {
+    return [...database.frostingFlavors]
 }

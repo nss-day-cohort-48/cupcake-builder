@@ -1,4 +1,5 @@
 import { Cakes } from "./Cakes.js"
+import { FrostingFlavors } from "./FrostingFlavors.js"
 export const CupcakeBuilder = () => {
     return `
     <h2>Cupcake Builder</h2>
@@ -10,6 +11,7 @@ export const CupcakeBuilder = () => {
         </section>
         <section>
             <h3>Frosting Flavors</h3>
+            ${ FrostingFlavors() }
         </section>
         <section>
             <h3>Toppings</h3>

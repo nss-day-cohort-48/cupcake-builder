@@ -7,7 +7,7 @@ export const Cakes = () => {
     let html = "<ul>"
 
     const arrayOfCakeHTMLInputElements = cakes.map(
-        (cakeObject)=>{
+        (cakeObject) => {
             return `
                 <li>
                     <input type="radio" name="cakeType" value="${cakeObject.id}" /> ${cakeObject.name}
