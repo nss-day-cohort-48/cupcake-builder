@@ -3,6 +3,16 @@ import { getFrostingFlavors } from "./database.js"
 
 const frostingFlavors = getFrostingFlavors()
 
+document.addEventListener(
+    "change",
+    (changeEvent) => {
+        if(changeEvent.target.name === "frostingFlavor") {
+            const frostingFlavorId = parseInt(changeEvent.target.value)
+            setFrostingFlavorId(frostingFlavorId)
+        }
+    }
+)
+
 export const FrostingFlavors = () => {
     let html = "<ul>"
 

@@ -50,17 +50,17 @@ const database = {
             price: .50
         },
         {
-            id: 1,
+            id: 2,
             name: "Chocolate Curls",
             price: .50
         },
         {
-            id: 1,
+            id: 3,
             name: "Rainbow Sprinkles",
             price: .50
         },
         {
-            id: 1,
+            id: 4,
             name: "Cinnamon Sugar",
             price: .50
         }
@@ -75,4 +75,16 @@ export const getCakes = () => {
 
 export const getFrostingFlavors = () => {
     return [...database.frostingFlavors]
+}
+
+export const getToppings = () => {
+    return [...database.toppings]
+}
+
+export const setCakeTypeId = (id) => {
+    database.cupcakeBuilder.cakeTypeId = id
+}
+
+export const setFrostingFlavorId = (id) => {
+    database.cupcakeBuilder.frostingFlavorId = id
 }
