@@ -1,8 +1,17 @@
-import { getToppings } from "./database.js"
+import { getToppings, setToppingId } from "./database.js"
 // Generate HTML representations of each frosting flavor object
 
 const toppings = getToppings()
 
+document.addEventListener(
+    "change",
+    (changeEvent)=>{
+        if(changeEvent.target.name === "topping"){
+            const IDOfToppingChosen = parseInt(changeEvent.target.value)
+            setToppingId(IDOfToppingChosen)
+        }
+    }
+)
 export const Toppings = () => {
     let html = "<ul>"
 

@@ -1,4 +1,4 @@
-import { getFrostingFlavors } from "./database.js"
+import { getFrostingFlavors, setFrostingFlavorId } from "./database.js"
 // Generate HTML representations of each frosting flavor object
 
 const frostingFlavors = getFrostingFlavors()

@@ -65,8 +65,51 @@ const database = {
             price: .50
         }
     ],
-    cupcakes: [],
+    cupcakes: [
+        {
+            id: 2,
+            cakeTypeId: 1,
+            frostingFlavorId: 1,
+            toppingId: 1
+        }
+    ],
     cupcakeBuilder: {}
+}
+
+/**
+ *{
+     cakeTypeId: int
+    frostingFlavorId int
+    toppingId int
+ }
+ */
+export const addCupcake = () => {
+    if(
+        "cakeTypeId" in database.cupcakeBuilder &&
+        "toppingId" in database.cupcakeBuilder &&
+        "frostingFlavorId" in database.cupcakeBuilder
+    ){
+        const copyOfCupcakeBuilderObject = {...database.cupcakeBuilder}
+
+        const copyOfCupcakesArray = [...database.cupcakes]
+
+        const cupcakesArrayLength = database.cupcakes.length
+
+        const newCupcakeId = cupcakesArrayLength > 0
+            ? copyOfCupcakesArray.pop().id + 1
+            : 1
+
+        copyOfCupcakeBuilderObject.id = newCupcakeId
+
+        database.cupcakes.push(copyOfCupcakeBuilderObject)
+
+        database.cupcakeBuilder = {}
+
+        document.dispatchEvent(new CustomEvent("stateOfCupcakesIsDifferent"))
+
+        debugger
+    }
+
 }
 
 export const getCakes = () => {
@@ -88,3 +131,8 @@ export const setCakeTypeId = (id) => {
 export const setFrostingFlavorId = (id) => {
     database.cupcakeBuilder.frostingFlavorId = id
 }
+
+export const setToppingId = (chosenToppingId) => {
+    database.cupcakeBuilder.toppingId = chosenToppingId
+}
+

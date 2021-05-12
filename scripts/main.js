@@ -7,3 +7,10 @@ const renderHTML = () => {
 }
 
 renderHTML()
+
+document.addEventListener(
+    "stateOfCupcakesIsDifferent",
+    () => {
+        renderHTML()
+    }
+)
