@@ -2,6 +2,7 @@ import { Cakes } from "./Cakes.js"
 import { FrostingFlavors } from "./FrostingFlavors.js"
 import { Toppings } from "./Toppings.js"
 import { SubmitButton } from "./SubmitButton.js"
+import { Cupcakes } from "./Cupcakes.js"
 export const CupcakeBuilder = () => {
     return `
     <h2>Cupcake Builder</h2>
@@ -23,6 +24,7 @@ export const CupcakeBuilder = () => {
         ${ SubmitButton() }
     <article>
         <h3>Cupcakes</h3>
+        ${ Cupcakes() }
     </article>
     `
 }

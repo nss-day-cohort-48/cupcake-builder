@@ -76,13 +76,9 @@ const database = {
     cupcakeBuilder: {}
 }
 
-/**
- *{
-     cakeTypeId: int
-    frostingFlavorId int
-    toppingId int
- }
- */
+export const getCupcakes = () => {
+    return [...database.cupcakes]
+}
 export const addCupcake = () => {
     if(
         "cakeTypeId" in database.cupcakeBuilder &&
@@ -107,7 +103,6 @@ export const addCupcake = () => {
 
         document.dispatchEvent(new CustomEvent("stateOfCupcakesIsDifferent"))
 
-        debugger
     }
 
 }
