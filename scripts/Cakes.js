@@ -3,6 +3,25 @@ import { getCakes } from "./database.js"
 
 const cakes = getCakes()
 
-const Cakes = () => {
+export const Cakes = () => {
+    let html = "<ul>"
 
+    const arrayOfCakeHTMLInputElements = cakes.map(
+        (cakeObject)=>{
+            return `
+                <li>
+                    <input type="radio" name="cakeType" value="${cakeObject.id}" /> ${cakeObject.name}
+                </li>
+            `
+        }
+    )
+
+    const singleStringOfHTML = arrayOfCakeHTMLInputElements.join("")
+
+    html += singleStringOfHTML
+
+    html += "</ul>"
+
+    return html
 }
+
